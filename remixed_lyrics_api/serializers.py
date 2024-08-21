@@ -13,11 +13,9 @@ class ArtistSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Artist
         fields = ('id', 'name', 'alternative_name')
-        # read_only_fields=True
 
 class SongSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Song
         fields = ('id', 'title', 'lyrics', 'artist', 'categories')
-        # read_only_fields=True
 
