@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 load_dotenv()
@@ -31,20 +32,26 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# print("DB_NAME:", os.getenv('DB_NAME'))
+# print("DB_USER:", os.getenv('DB_USER'))
+# print("DB_PASSWORD:", os.getenv('DB_PASSWORD'))
 
 # Application definition
 
 INSTALLED_APPS = [
+    "corsheaders",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "remixed_lyrics_api",
     'rest_framework',
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -53,7 +60,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
+CORS_ALLOW_ALL_ORIGINS = True
 ROOT_URLCONF = "remixlyric.urls"
 
 TEMPLATES = [
@@ -110,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+django_heroku.settings(locals())
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -126,7 +133,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = "static/"
+# STATIC_URL = "static/"
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
