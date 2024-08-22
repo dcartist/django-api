@@ -14,3 +14,9 @@ class CategoryList(generics.ListAPIView):
 class ArtistList(generics.ListAPIView):
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
+
+class SongList(generics.ListAPIView):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer
+
+
