@@ -20,3 +20,14 @@ class SongList(generics.ListAPIView):
     serializer_class = SongSerializer
 
 
+class SongPagination(PageNumberPagination):
+    page_size = 10
+    max_page_size = 30
+    page_size_query_param = 'page_size'
+
+class SongListView(generics.ListAPIView):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer
+    pagination_class = SongPagination
+
+

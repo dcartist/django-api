@@ -1,4 +1,5 @@
-from rest_framework import serializers
+from rest_framework import serializers, generics
+from rest_framework.pagination import PageNumberPagination
 from .models import *
 
 
@@ -18,4 +19,8 @@ class SongSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Song
         fields = ('id', 'title', 'lyrics', 'artist', 'categories')
+
+class SongDetail(generics.RetrieveAPIView):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer
 
