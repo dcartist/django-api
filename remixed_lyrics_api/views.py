@@ -22,6 +22,9 @@ class RemixLevelList(generics.ListAPIView):
     queryset = RemixLevel.objects.all()
     serializer_class = RemixLevelSerializer
 
+class ArtistDetail(generics.RetrieveAPIView):
+    queryset = Artist.objects.all()
+    serializer_class = ArtistSerializer
 
 
 
