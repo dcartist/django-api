@@ -7,8 +7,7 @@ from .models import *
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Category
-        fields = ('id', 'category')
-        # read_only_fields=True
+        fields = ('id', 'name')
 
 class ArtistSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
