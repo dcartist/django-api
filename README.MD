@@ -21,13 +21,13 @@ git clone https://github.com/dcartist/django-api.git
 cd django-api
 ```
 
-install using
+use pipenv to install the django app with the following command in the terminal
 
 ```bash
-pipenv instll
+pipenv install
 ```
 
-Create a .env using the following:
+You must create a postgres database, then using the variables create a .env using the following:
 
 ```bash
 SECRET_KEY="SECRET_KEY_HERE"
@@ -37,3 +37,27 @@ DB_NAME=dbNAME_here
 DB_USER=dbUSERNAME_here
 DB_PASSWORD=dbPassWord_here
 ```
+
+
+run the pipenv enviroment using: 
+
+```bash
+pipenv install
+```
+
+inside the pipenv shell check run the migrations using
+
+```bash
+python3 manage.py. migrate
+```
+
+Then run the app using
+
+```bash
+python3 manage.py. runserver
+```
+
+
+
+
+
