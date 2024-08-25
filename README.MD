@@ -1,5 +1,30 @@
 # Remix Lyrics API
-Built with Django
+
+
+
+
+Remix Lyrics API is the django api for remix lyrics app. It was made with Python, Django and Postgres 
+
+
+
+
+## EndPoints
+
+| Endpoints           | Location              |
+| ------------------- | --------------------- |
+| /                   | List all categories   |
+| /categories/        | List all categories   |
+| /songs/             | List all songs        |
+| /songs/:songId/     | List song by id       |
+| /artists/           | List all artist       |
+| /artists/:artistId/ | List artist by id     |
+| /remixlevels/       | List all remix levels |
+
+
+
+
+
+
 
 ## Prerequisites
 
@@ -11,8 +36,6 @@ Before you begin, ensure you have the following installed:
 - Postgres
 
 ## Installation
-
-### 1. Clone the Repository
 
 Clone the project to your local machine using:
 
