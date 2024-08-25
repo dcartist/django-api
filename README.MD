@@ -1,14 +1,11 @@
 # Remix Lyrics API
-
-
-
-
 Remix Lyrics API is the django api for remix lyrics app. It was made with Python, Django and Postgres 
 
 
 
+## EndPoints:
 
-## EndPoints
+
 
 | Endpoints           | Location              |
 | ------------------- | --------------------- |
@@ -21,6 +18,15 @@ Remix Lyrics API is the django api for remix lyrics app. It was made with Python
 | /remixlevels/       | List all remix levels |
 
 
+
+## Future plans:
+
+- 
+  Search by keyword
+- More comments in the code
+- List Songs with only name of artist and remix levels
+- Suggested Song Area
+- List by artist
 
 
 
